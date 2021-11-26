@@ -1,0 +1,20 @@
+/* Création de ma première liste */
+$padding-dimension: 1rem 2rem 3rem 4rem;
+
+/* Application de cette liste à un selecteur */
+.block {
+    padding: $padding-dimension;
+}
+
+/* Création d'une liste des différentes tailles de texte utiliser dans le site */
+$font-size: 7rem 5rem 4rem 2rem;
+
+/* Nous souhaitons utiliser la valeur 2rem située dans la liste $font-size 
+pour le label de notre formulaire font-size */
+.form {
+    &__field {
+        &__label {
+            font-size: nth($font-size, 4);
+        }
+    }
+}
