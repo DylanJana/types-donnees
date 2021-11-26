@@ -35,5 +35,27 @@ que vous pouvez passer dans la mixin : */
 /*@each $key, $value in $map {
 
 }*/
+/* Media queries avec SASS */
+/* Media queries dans une mixin */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3n 1fr);
+}
+@media screen and (max-width: 599px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Remplacement du contenu du media queries dans la mixin */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3n 1fr);
+}
+@media screen and (max-width: 599px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
