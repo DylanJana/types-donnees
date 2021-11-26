@@ -88,11 +88,13 @@ que vous pouvez passer dans la mixin : */
 }
 
 /* Je remplis les valeurs de mon ensemble de règles css grâce à la fonction map-get() */
-@mixin input-txt-palette($state) {
-    $palette: map-get($input-txt-palette, $state);
-    border: .1rem solid map-get($map: $palette, $key: border );
-    background-color: map-get($map: $palette, $key: bg );
-    color: map-get($map: $palette, $key: txt );
+@mixin input-txt-palette($palettes) {
+    @each $state, $palette in $palettes {
+        $palette: map-get($input-txt-palette, $state);
+        border: .1rem solid map-get($map: $palette, $key: border );
+        background-color: map-get($map: $palette, $key: bg );
+        color: map-get($map: $palette, $key: txt );
+}
 }
 
 /* J'applique ma mixin à mon sélecteur par défaut et inactif form__txt input */
@@ -101,5 +103,20 @@ que vous pouvez passer dans la mixin : */
         & input {
             @include input-txt-palette(focus);
         }
+    }
+}
+
+/* Création d'un boucle */
+/*@each $key, $value in $map {
+
+}*/
+
+@mixin input-txt-palette($palettes) {
+    @each $state, $palette in $palettes {
+        &:#{$state} {
+            border: .1rem solid map-get($palette, border);
+            background-color: map-get($palette, bg);
+            color: map-get($map: $palette, $key: txt );  
+        } 
     }
 }
