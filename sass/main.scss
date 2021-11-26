@@ -153,3 +153,24 @@ $breakpoints : (
         grid-template-columns: 1fr;
     }
 }
+
+$color-modificator : (
+    orange: #cc8624,
+    pink: #cc2475,
+    blue: #2469cc,
+    green: #24cc24,
+    purple: purple
+);
+
+@mixin color-modificator($colors) {
+    @each $mod, $val in $colors {
+        &--#{$mod} {
+            color: $val;
+        }
+    }
+}
+
+/* Challenge modificateur */
+.article__headline {
+    @include color-modificator($color-modificator);
+};
