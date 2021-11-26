@@ -58,4 +58,21 @@ que vous pouvez passer dans la mixin : */
   }
 }
 
+/* Challenge modificateur */
+.article__headline--orange {
+  color: #cc8624;
+}
+.article__headline--pink {
+  color: #cc2475;
+}
+.article__headline--blue {
+  color: #2469cc;
+}
+.article__headline--green {
+  color: #24cc24;
+}
+.article__headline--purple {
+  color: purple;
+}
+
 /*# sourceMappingURL=style.css.map */
