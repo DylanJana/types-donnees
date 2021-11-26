@@ -43,7 +43,7 @@ $color-accent: #D6FFF5;
 $color-white: #fff;
 $color-invalid: #DB464B;
 
-$input-txt-palettes: (
+$input-txt-palette: (
     active: (
         bg: $color-primary,
         border: $color-primary,
@@ -62,3 +62,44 @@ $input-txt-palettes: (
         txt: $color-white,
     )
 );
+
+/* Utiliser les mixins avec les maps */
+@mixin input-txt-palette {
+    border: .1rem solid $border;
+    background-color: $bg;
+    color: $txt;
+}
+
+/* Pour déclarer de quel état (hover, etc) obtenir les informations, vous devez assigner un argument our l'état
+que vous pouvez passer dans la mixin : */
+
+@mixin input-txt-palette($state) {
+    border: .1rem sold $border;
+    background-color: $bg;
+    color: $txt;
+}
+
+/* Intégration de la map dans ma mixin */
+@mixin input-txt-palette($state) {
+    $palette: map-get($input-txt-palette, $state); /* Je stocke ma map et son été dans ma variable $palette*/
+    border: .1rem solid $border;
+    background-color: $bg;
+    color: $txt;
+}
+
+/* Je remplis les valeurs de mon ensemble de règles css grâce à la fonction map-get() */
+@mixin input-txt-palette($state) {
+    $palette: map-get($input-txt-palette, $state);
+    border: .1rem solid map-get($map: $palette, $key: border );
+    background-color: map-get($map: $palette, $key: bg );
+    color: map-get($map: $palette, $key: txt );
+}
+
+/* J'applique ma mixin à mon sélecteur par défaut et inactif form__txt input */
+.form {
+    &__field {
+        & input {
+            @include input-txt-palette(focus);
+        }
+    }
+}
