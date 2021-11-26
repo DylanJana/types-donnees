@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* Création de ma première liste */
+/* Application de cette liste à un selecteur */
+.block {
+  padding: 1rem 2rem 3rem 4rem;
+}
+
+/* Création d'une liste des différentes tailles de texte utiliser dans le site */
+/* Nous souhaitons utiliser la valeur 2rem située dans la liste $font-size 
+pour le label de notre formulaire font-size */
+.form__field__label {
+  font-size: 2rem;
+}
+
+/* Modification d'une liste en maps en y ajoutant une clef */
+/* Mise en application d'une map */
+.form__field label {
+  font-size: 2rem;
+}
+
+/* Seconde mise en application */
+/* Utiliser les mixins avec les maps */
+/* Pour déclarer de quel état (hover, etc) obtenir les informations, vous devez assigner un argument our l'état
+que vous pouvez passer dans la mixin : */
+/* Intégration de la map dans ma mixin */
+/* Je remplis les valeurs de mon ensemble de règles css grâce à la fonction map-get() */
+/* J'applique ma mixin à mon sélecteur par défaut et inactif form__txt input */
+.form__field input {
+  border: 0.1rem solid #15DEA5;
+  background-color: #15DEA5;
+  color: #fff;
+}
+
+/* Création d'un boucle */
+/*@each $key, $value in $map {
+
+}*/
+/* Media queries avec SASS */
+/* Media queries dans une mixin */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3n 1fr);
+}
+@media screen and (max-width: 599px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Remplacement du contenu du media queries dans la mixin */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3n 1fr);
+}
+@media screen and (max-width: 599px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3N0eWxlLmNzcyIsIi4uLy4uL3Nhc3MvbWFpbi5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQ0FoQixrQ0FBQTtBQUdBLDhDQUFBO0FBQ0E7RUFDSSw0QkFKZ0I7QURJcEI7O0FDR0EsZ0ZBQUE7QUFHQTs2Q0FBQTtBQUlRO0VBQ0ksZUFBQTtBREpaOztBQ1NBLDREQUFBO0FBUUEsa0NBQUE7QUFHUTtFQUNJLGVBQUE7QURmWjs7QUNvQkEsZ0NBQUE7QUEyQkEsc0NBQUE7QUFPQTt3Q0FBQTtBQVNBLHdDQUFBO0FBUUEsdUZBQUE7QUFVQSw4RUFBQTtBQUdRO0VBVEEsNEJBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7QURoRVI7O0FDNkVBLHlCQUFBO0FBQ0E7O0VBQUE7QUFjQSw0QkFBQTtBQUtBLGlDQUFBO0FBT0E7RUFDSSxhQUFBO0VBQ0EscUNBQUE7QUQvRko7QUN3Rkk7RUFLSjtJQUpRLDBCQUFBO0VEckZOO0FBQ0Y7O0FDOEZBLDJEQUFBO0FBT0E7RUFDSSxhQUFBO0VBQ0EscUNBQUE7QURqR0o7QUMwRkk7RUFLSjtJQUlRLDBCQUFBO0VEL0ZOO0FBQ0YiLCJmaWxlIjoic3R5bGUuY3NzIn0= */
