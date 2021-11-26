@@ -18,3 +18,47 @@ pour le label de notre formulaire font-size */
         }
     }
 }
+
+/* Modification d'une liste en maps en y ajoutant une clef */
+$font-size: (
+    logo: 7rem,
+    heading: 5rem,
+    project-heading: 4rem,
+    label: 2rem
+);
+
+/* Mise en application d'une map */
+.form {
+    &__field {
+        & label {
+            font-size: map-get($map: $font-size, $key: label);
+        }
+    }
+}
+
+/* Seconde mise en application */
+$color-primary: #15DEA5;
+$color-secondary: #001534;
+$color-accent: #D6FFF5;
+$color-white: #fff;
+$color-invalid: #DB464B;
+
+$input-txt-palettes: (
+    active: (
+        bg: $color-primary,
+        border: $color-primary,
+        txt: $color-white,
+    ),
+
+    focus: (
+        bg: $color-primary,
+        border: $color-primary,
+        txt: $color-white
+    ),
+
+    invalid: (
+        bg: $color-invalid,
+        border: $color-white,
+        txt: $color-white,
+    )
+);

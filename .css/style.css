@@ -12,4 +12,12 @@ pour le label de notre formulaire font-size */
   font-size: 2rem;
 }
 
+/* Modification d'une liste en maps en y ajoutant une clef */
+/* Mise en application d'une map */
+.form__field label {
+  font-size: 2rem;
+}
+
+/* Seconde mise en application */
+
 /*# sourceMappingURL=style.css.map */
