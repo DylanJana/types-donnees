@@ -19,5 +19,16 @@ pour le label de notre formulaire font-size */
 }
 
 /* Seconde mise en application */
+/* Utiliser les mixins avec les maps */
+/* Pour déclarer de quel état (hover, etc) obtenir les informations, vous devez assigner un argument our l'état
+que vous pouvez passer dans la mixin : */
+/* Intégration de la map dans ma mixin */
+/* Je remplis les valeurs de mon ensemble de règles css grâce à la fonction map-get() */
+/* J'applique ma mixin à mon sélecteur par défaut et inactif form__txt input */
+.form__field input {
+  border: 0.1rem solid #15DEA5;
+  background-color: #15DEA5;
+  color: #fff;
+}
 
 /*# sourceMappingURL=style.css.map */
