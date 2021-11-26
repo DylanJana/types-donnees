@@ -120,3 +120,36 @@ que vous pouvez passer dans la mixin : */
         } 
     }
 }
+
+/* Media queries avec SASS */
+$breakpoints : (
+    mobile: 599px
+);
+
+/* Media queries dans une mixin */
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3n 1fr);
+    @include mobile-only;
+}
+
+/* Remplacement du contenu du media queries dans la mixin */
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+       @content;
+    }
+}
+
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3n 1fr);
+    @include mobile-only {
+        grid-template-columns: 1fr;
+    }
+}
